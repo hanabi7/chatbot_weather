@@ -1,0 +1,15 @@
+首先申请心知天气网站账号
+https://www.seniverse.com
+
+在这个网站的控制台的目录下面API密钥里面的私钥里面找到自己的密钥,记录下来
+Action  Core  NLU  UI 代码目录下面有四个模块
+在Core目录下面运行 pip install -r requirements.txt
+在Action目录下面运行SENIVERSE_KEY=xxx ./start_sdk_server.bash xxx替换成自己的apikey
+或者用我的SENIVERSE_KEY=S9yZlXhp_aZZrVjnl ./start_sdk_server.bash
+在Core目录下面运行./run_server.bash
+在NLU目录下面运行./run_server.bash
+在UI目录下面运行./start_server.bash
+以上四个命令需要同时运行
+然后打开http://127.0.0.1:8000/这个网站,就有对应的聊天机器人了
+如果有问题我远程向日葵安装
+
