@@ -85,13 +85,13 @@ def text_date_to_number_date(text_date):
     # Not supported by weather API provider freely
     elif text_date == "大后天":
         # return 3
-        return text_date
+        return 3
     elif text_date == "昨天":
-        return text_date
+        return -1
     elif text_date == "前天":
-        return text_date
+        return -2
     elif text_date == "大前天":
-        return text_date
+        return -3
     else:
         return compute_relative_time(text_date)
     """

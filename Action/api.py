@@ -38,12 +38,23 @@ def fetch_weather(location, start=0, days=15):
 
 
 def get_weather_by_day(location, day=1):
-    result = fetch_weather(location)
-    normal_result = {
-        "location": result["results"][0]["location"],
-        "result": result["results"][0]["daily"][day]
-    }
-
+    if day >= 0:
+        result = fetch_weather(location)
+        normal_result = {
+            "location": result["results"][0]["location"],
+            "result": result["results"][0]["daily"][day]
+        }
+    else:
+        result = fetch_weather(location)
+        normal_result = {
+            "location": result["results"][0]["location"],
+            "result": result["results"][0]["daily"][abs(day)]
+        }
+        test_date = normal_result['result']['date']
+        year, mouth, day_str = test_date.split('-')
+        transformed_day = int(day_str) + day + day
+        update_test_date = year + '-' + mouth + '-' + str(transformed_day) 
+        normal_result['result']['date'] = update_test_date
     return normal_result
 
 
